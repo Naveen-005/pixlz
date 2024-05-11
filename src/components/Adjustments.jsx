@@ -1,6 +1,12 @@
 import React from 'react';
 import './Adjustments.css';
-const Adjustments = () => {
+const Adjustments = (props) => {
+
+    const handleChange=(e)=>{
+        props.change(e)
+       
+    }
+
     return (
         <div className="adjustments-container">
 
@@ -8,7 +14,7 @@ const Adjustments = () => {
                 <p>Adjustments</p>
                 <div className="slider">
                     <label htmlFor="brightness">Brightness:</label>
-                    <input type="range" id="brightness" name="brightness" min="0" max="100" />
+                    <input type="range" id="brightness" name="brightness" min="-100" max="100" value={props.values.brightness} onChange={handleChange}/>
                 </div>
                 <div className="slider">
                     <label htmlFor="Contrast">Contrast:</label>
@@ -26,10 +32,7 @@ const Adjustments = () => {
                     <label htmlFor="Hue">Hue:</label>
                     <input type="range" id="Hue" name="Hue" min="0" max="100" />
                 </div>
-                <div className="slider">
-                    <label htmlFor="Saturation">Saturation:</label>
-                    <input type="range" id="Saturation" name="Saturation" min="0" max="100" />
-                </div>
+                {/*
                 <div className="slider">
                     <label htmlFor="Saturation">Levels:</label>
                     <input type="range" id="Levels" name="Levels" min="0" max="100" />
@@ -42,6 +45,7 @@ const Adjustments = () => {
                     <label htmlFor="Highlights">Highlights:</label>
                     <input type="range" id="Highlights" name="Highlights" min="0" max="100" />
                 </div>
+    */}
             </div>
         </div>
     );
