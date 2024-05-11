@@ -1,0 +1,24 @@
+.adjustments-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    height: 100vh; /* Full height of the viewport */
+    align-items: center; /* Vertically center the content */
+    justify-content: flex-end; /* Align content to the right */
+    padding: 0 20px; /* Optional padding for spacing */
+    background-color: #EADBC8;
+    max-width: fit-content;
+
+}
+
+.sliders {
+    display: flex;
+    flex-direction: column;
+}
+
+.slider {
+    margin-bottom: 10px; /* Adjust spacing between sliders */
+}
+
+/* Add more styling as needed */

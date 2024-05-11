@@ -34,6 +34,10 @@
     display: flex;
     align-items: center;
     padding: 5px 0;
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    cursor: pointer;
   }
   
   .icon {

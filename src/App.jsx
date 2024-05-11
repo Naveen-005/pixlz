@@ -4,6 +4,7 @@ import './App.css'
 //import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
 import Sidebar from './components/Sidebar'
 import ImageCanvas from './components/ImageCanvas'
+import Adjustments from './components/Adjustments'
 
 
 function App() {
@@ -23,6 +24,8 @@ function App() {
       <Sidebar />
       <input type="file"  onChange={handleChange}/>
       {image && <ImageCanvas image={image}/>}
+
+      <Adjustments />
 
     </>
   )

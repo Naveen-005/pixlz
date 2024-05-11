@@ -16,14 +16,26 @@ const Sidebar = () => {
                 </button>
             </div>
             <div className="sidebar-content">
-                <div className="sidebar-item">
+                <button className="sidebar-item">
                     <span className="icon">Icon</span>
-                    {isExpanded && <span className="name">Item 1</span>}
-                </div>
-                <div className="sidebar-item">
+                    {isExpanded && <span className="name">Basic Tools</span>}
+                </button>
+                <button className="sidebar-item">
                     <span className="icon">Icon</span>
-                    {isExpanded && <span className="name">Item 2</span>}
-                </div>
+                    {isExpanded && <span className="name">Adjustments</span>}
+                </button>
+                <button className="sidebar-item">
+                    <span className="icon">Icon</span>
+                    {isExpanded && <span className="name">Filters & Effects</span>}
+                </button>
+                <button className="sidebar-item">
+                    <span className="icon">Icon</span>
+                    {isExpanded && <span className="name">Advanced</span>}
+                </button>
+                <button className="sidebar-item">
+                    <span className="icon">Icon</span>
+                    {isExpanded && <span className="name">Text & Graphics</span>}
+                </button>
                 {/* Add more sidebar items as needed */}
             </div>
         </div>
