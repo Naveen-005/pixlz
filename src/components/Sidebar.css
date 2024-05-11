@@ -1,0 +1,50 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 60px; /* Adjust width as needed */
+    height: 100%;
+    background-color: #333;
+    color: #fff;
+    overflow-y: auto;
+    transition: width 0.3s ease;
+  }
+  
+  .sidebar.expanded {
+    width: 200px; /* Expanded width */
+  }
+  
+  .sidebar-header {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .expand-button {
+    background-color: transparent;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .sidebar-content {
+    padding: 10px;
+  }
+  
+  .sidebar-item {
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+  }
+  
+  .icon {
+    margin-right: 10px;
+  }
+  
+  .name {
+    display: inline;
+  }
+  /*
+  .sidebar-item:hover .name {
+    display: inline;
+  }
+  */

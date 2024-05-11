@@ -1,0 +1,12 @@
+.image-container {
+    width: 850px; /* Set your desired fixed width */
+    height: 480px; /* Set your desired fixed height */
+    display: flex;
+    justify-content: center; /* Horizontally center the div */
+    align-items: center; /* Vertically center the div */
+    position: fixed; /* Position the div relative to the viewport */
+    top: 20%; /* Align the top of the div to the middle of the viewport */
+    left: 25%; /* Align the left of the div to the middle of the viewport */
+    transform: translate(-20%, -15%); /* Move the div back by half of its width and height to center it */
+
+  }
