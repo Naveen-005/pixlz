@@ -14,23 +14,33 @@ const Adjustments = (props) => {
                 <p>Adjustments</p>
                 <div className="slider">
                     <label htmlFor="brightness">Brightness:</label>
+                    <input type="number" id="brightness" name="brightness" min="-100" max="100" value={props.values.brightness} onChange={handleChange} style={{ width: '50px' }} />
+                    <br />
                     <input type="range" id="brightness" name="brightness" min="-100" max="100" value={props.values.brightness} onChange={handleChange}/>
                 </div>
                 <div className="slider">
-                    <label htmlFor="Contrast">Contrast:</label>
-                    <input type="range" id="Contrast" name="Contrast" min="0" max="100" />
+                    <label htmlFor="contrast">Contrast:</label>
+                    <input type="number" id="contrast" name="contrast" min="0" max="100" value={props.values.contrast} onChange={handleChange} style={{ width: '50px' }}/>
+                    <br />
+                    <input type="range" id="contrast" name="contrast" min="0" max="100" value={props.values.contrast} onChange={handleChange}/>
                 </div>
                 <div className="slider">
-                    <label htmlFor="Saturation">Saturation:</label>
-                    <input type="range" id="Saturation" name="Saturation" min="0" max="100" />
+                    <label htmlFor="saturation">Saturation:</label>
+                    <input type="number" id="saturation" name="saturation" min="0" max="100" value={props.values.saturation} onChange={handleChange} style={{ width: '50px' }}/>
+                    <br />
+                    <input type="range" id="saturation" name="saturation" min="0" max="100" value={props.values.saturation} onChange={handleChange}/>
                 </div>
                 <div className="slider">
-                    <label htmlFor="Exposure">Exposure:</label>
-                    <input type="range" id="Exposure" name="Exposure" min="0" max="100" />
+                    <label htmlFor="exposure">Exposure:</label>
+                    <input type="number" id="exposure" name="exposure" min="0" max="100" value={props.values.exposure} onChange={handleChange} style={{ width: '50px' }}/>
+                    <br />
+                    <input type="range" id="exposure" name="exposure" min="0" max="100" value={props.values.exposure} onChange={handleChange}/>
                 </div>
                 <div className="slider">
-                    <label htmlFor="Hue">Hue:</label>
-                    <input type="range" id="Hue" name="Hue" min="0" max="100" />
+                    <label htmlFor="hue">Hue:</label>
+                    <input type="number" id="hue" name="hue" min="0" max="100" value={props.values.hue} onChange={handleChange} style={{ width: '50px' }}/>
+                    <br />
+                    <input type="range" id="hue" name="hue" min="0" max="100" value={props.values.hue} onChange={handleChange}/>
                 </div>
                 {/*
                 <div className="slider">
