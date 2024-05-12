@@ -17,12 +17,7 @@ const ImageCanvas = (props) => {
       canvas.width = img.width;
       canvas.height = img.height;
       ctx.drawImage(img, 0, 0);
-/*
-      if(props._adjustments.brightness!==0){
-        
-      }
-*/
-      
+
     };
     img.src = URL.createObjectURL(props.image);
 
@@ -40,17 +35,18 @@ const ImageCanvas = (props) => {
     }
 
     const canvas = canvasRef.current;
-    const ctx = canvas.getContext('2d');
+    //const ctx = canvas.getContext('2d');
+
+    const alpha=0.4*(Math.abs(props._adjustments.brightness)/100)
+    console.log("alpha:",alpha)
 
     const brightnessLayerCanvas = brightnessLayerRef.current;
     const brightnessLayerCtx = brightnessLayerCanvas.getContext('2d');
     brightnessLayerCanvas.width=canvas.width;
     brightnessLayerCanvas.height=canvas.height;
     brightnessLayerCtx.clearRect(0, 0, brightnessLayerCanvas.width, brightnessLayerCanvas.height);
-    brightnessLayerCtx.fillStyle = "rgba(0, 0, 0, 0.5)";
+    brightnessLayerCtx.fillStyle = `rgba(128, 128, 128, ${alpha})`;
     brightnessLayerCtx.fillRect(0, 0, brightnessLayerCanvas.width, brightnessLayerCanvas.height);
-
-
 
     const imageData = brightnessLayerCtx.getImageData(0, 0, canvas.width, canvas.height);
     const adjustedData = brightnessChange(imageData, props._adjustments.brightness);
