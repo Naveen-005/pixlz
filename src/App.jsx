@@ -1,18 +1,18 @@
 import { useState, useEffect,useRef } from 'react'
 
 import './App.css'
-//import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
 import Sidebar from './components/Sidebar'
 import ImageCanvas from './components/ImageCanvas'
 import Adjustments from './components/Adjustments'
 
 
-function App() {
+function App(props) {
 
-  const[image,setImage]=useState(null)
-  const handleChange=(e)=>{
-    setImage(e.target.files[0])
-    console.log("image:\n",image)
+
+
+  const [selectedMenu,setSelectedMenu]=useState("adjustments")
+  const handleMenuChange=(menuItem)=>{
+    setSelectedMenu(menuItem)
   }
 
   const[_adjustments,setAdjustments]=useState({
@@ -30,17 +30,13 @@ function App() {
 
   }
 
-  useEffect(() => {
-    //console.log("image:\n", image);
-  }, [image]);
-
   return (
     <>
-      <Sidebar />
-      <input type="file"  onChange={handleChange}/>
-      {image && <ImageCanvas image={image} _adjustments={_adjustments}/>}
-
-      <Adjustments values={_adjustments} change={handleAdjustmentChange}/>
+      <Sidebar change={handleMenuChange}/>
+      
+      {props.image && <ImageCanvas image={props.image} _adjustments={_adjustments}/>}
+      {(selectedMenu==="adjustments") &&
+      <Adjustments values={_adjustments} change={handleAdjustmentChange}/>}
 
     </>
   )
