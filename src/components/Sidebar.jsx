@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import './Sidebar.css';
 
-const Sidebar = () => {
+const Sidebar = (props) => {
     const [isExpanded, setIsExpanded] = useState(false);
 
     const toggleSidebar = () => {
         setIsExpanded(!isExpanded);
     };
+
+    const menuChange=(menuItem)=>{
+        props.change(menuItem)
+    }
 
     return (
         <div className={`sidebar ${isExpanded ? 'expanded' : ''}`}>
@@ -16,11 +20,11 @@ const Sidebar = () => {
                 </button>
             </div>
             <div className="sidebar-content">
-                <button className="sidebar-item">
+                <button className="sidebar-item" >
                     <span className="icon">Icon</span>
                     {isExpanded && <span className="name">Basic Tools</span>}
                 </button>
-                <button className="sidebar-item">
+                <button className="sidebar-item" onClick={()=>menuChange("adjustments")}>
                     <span className="icon">Icon</span>
                     {isExpanded && <span className="name">Adjustments</span>}
                 </button>
@@ -28,7 +32,7 @@ const Sidebar = () => {
                     <span className="icon">Icon</span>
                     {isExpanded && <span className="name">Filters & Effects</span>}
                 </button>
-                <button className="sidebar-item">
+                <button className="sidebar-item" onClick={()=>menuChange("advanced")}>
                     <span className="icon">Icon</span>
                     {isExpanded && <span className="name">Advanced</span>}
                 </button>
